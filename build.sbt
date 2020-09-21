@@ -42,15 +42,7 @@ pomExtra :=
     </developer>
   </developers>
 
-//publishTo := sonatypePublishToBundle.value
-
-publishTo := Some(
-  if (isSnapshot.value)
-    "Teads Snapshots" at "https://nexus.teads.net/content/repositories/snapshots"
-  else
-    "Teads Releases" at "https://nexus.teads.net/content/repositories/releases"
-)
-credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+publishTo := sonatypePublishToBundle.value
 
 import sbtrelease.ReleaseStateTransformations._
 
