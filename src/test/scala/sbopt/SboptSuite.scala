@@ -56,6 +56,18 @@ class SboptSuite extends munit.FunSuite {
       List("--name", "value1", "--name", "value2")
     )
   }
+  test("add multiple options with heterogeneous values") {
+    assertEquals(
+      args(opts("name", "value1", 1)),
+      List("--name", "value1", "--name", "1")
+    )
+  }
+  test("add multiple options with heterogeneous tuple values") {
+    assertEquals(
+      args(opts("name", ("key1", "value1"), ("key2", 42))),
+      List("--name", "key1=value1", "--name", "key2=42")
+    )
+  }
   test("add multiple options with tuples") {
     assertEquals(
       args(opts("name", List(("k1", 1), ("k2", 2)))),
