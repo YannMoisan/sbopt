@@ -40,6 +40,24 @@ object Encoder {
         s"${encoderA.encode(a._1)}=${encoderB.encode(a._2)}"
       }
     }
+  implicit def optionEncoder[A: Encoder] =
+    new Encoder[Option[A]] {
+      override def encode(a: Option[A]): String = {
+        val encoderA = implicitly[Encoder[A]]
+        a.fold("")(encoderA.encode)
+      }
+    }
+  implicit def someEncoder[A: Encoder] =
+    new Encoder[Some[A]] {
+      override def encode(a: Some[A]): String = {
+        val encoderA = implicitly[Encoder[A]]
+        encoderA.encode(a.get)
+      }
+    }
+  implicit def noneEncoder =
+    new Encoder[None.type] {
+      override def encode(a: None.type): String = ""
+    }
   implicit def listEncoder[A: Encoder] =
     new Encoder[List[A]] {
       override def encode(a: List[A]): String = {

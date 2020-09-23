@@ -38,8 +38,11 @@ class SboptSuite extends munit.FunSuite {
   test("add one option when the value is Some") {
     assertEquals(args(opt("name", Some("value"))), List("--name", "value"))
   }
+  test("add one option when the value is Some(Some)") {
+    assertEquals(args(opt("name", Some(Some("value")))), List("--name", "value"))
+  }
   test("discard option when the value is None") {
-    assertEquals(args(opt[String]("name", None)), List())
+    assertEquals(args(opt("name", None)), List())
   }
   test("discard option when value is empty") {
     assertEquals(args(opt("name", "")), List())
@@ -53,6 +56,12 @@ class SboptSuite extends munit.FunSuite {
   test("add multiple options") {
     assertEquals(
       args(opts("name", List("value1", "value2"))),
+      List("--name", "value1", "--name", "value2")
+    )
+  }
+  test("add multiple options with Option") {
+    assertEquals(
+      args(opts("name", List(Some("value1"), Some("value2")))),
       List("--name", "value1", "--name", "value2")
     )
   }
