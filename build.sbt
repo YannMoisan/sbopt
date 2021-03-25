@@ -1,11 +1,11 @@
 import sbt.Keys._
 
 organization := "com.yannmoisan"
-crossScalaVersions := Seq("2.12.12", "2.13.5")
+crossScalaVersions := Seq("2.12.13", "2.13.3")
 
 scalafmtOnCompile := true
 
-libraryDependencies += "org.scalameta" %% "munit" % "0.7.12" % Test
+libraryDependencies += "org.scalameta" %% "munit" % "0.7.22" % Test
 
 // Use %%% for non-JVM projects.
 testFrameworks += new TestFramework("munit.Framework")
