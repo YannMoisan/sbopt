@@ -20,15 +20,6 @@ scmInfo := Some(
   )
 )
 
-publishTo := {
-  Some(
-    if (isSnapshot.value)
-      Opts.resolver.sonatypeSnapshots
-    else
-      Opts.resolver.sonatypeStaging
-  )
-}
-publishMavenStyle := true
 publishArtifact in Test := false
 pomIncludeRepository := { _ =>
   false
@@ -41,24 +32,3 @@ pomExtra :=
       <url>http://github.com/yannmoisan</url>
     </developer>
   </developers>
-
-publishTo := sonatypePublishToBundle.value
-
-import sbtrelease.ReleaseStateTransformations._
-
-releaseCrossBuild := true
-
-releaseProcess := Seq[ReleaseStep](
-  checkSnapshotDependencies,
-  inquireVersions,
-  runClean,
-  runTest,
-  setReleaseVersion,
-  commitReleaseVersion,
-  tagRelease,
-  releaseStepCommandAndRemaining("+publishSigned"),
-  releaseStepCommand("sonatypeBundleRelease"),
-  setNextVersion,
-  commitNextVersion,
-  pushChanges
-)
