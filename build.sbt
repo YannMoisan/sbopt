@@ -1,7 +1,7 @@
 import sbt.Keys._
 
 organization := "com.yannmoisan"
-crossScalaVersions := Seq("2.12.13", "2.13.6")
+crossScalaVersions := Seq("2.12.14", "2.13.6")
 
 scalafmtOnCompile := true
 
