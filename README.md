@@ -1,5 +1,6 @@
 ![Build](https://github.com/YannMoisan/sbopt/actions/workflows/build.yml/badge.svg)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.yannmoisan/sbopt_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.yannmoisan/sbopt_2.12)
+[![License](https://img.shields.io/github/license/yannmoisan/sbopt)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 # sbopt
 
