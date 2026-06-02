@@ -9,7 +9,7 @@ crossScalaVersions := Seq(Scala_2_12, Scala_2_13)
 
 scalafmtOnCompile := true
 
-libraryDependencies += "org.scalameta" %% "munit" % "1.2.4" % Test
+libraryDependencies += "org.scalameta" %% "munit" % "1.3.2" % Test
 
 // Use %%% for non-JVM projects.
 testFrameworks += new TestFramework("munit.Framework")
