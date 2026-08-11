@@ -1,5 +1,5 @@
 ![Build](https://github.com/YannMoisan/sbopt/actions/workflows/build.yml/badge.svg)
-[![sbopt Scala version support](https://index.scala-lang.org/yannmoisan/sbopt/sbopt/latest.svg)](https://index.scala-lang.org/yannmoisan/sbopt/sbopt)
+[![Maven Central](https://img.shields.io/maven-central/v/com.yannmoisan/sbopt_2.13.svg)](https://search.maven.org/artifact/com.yannmoisan/sbopt_2.13)
 [![License](https://img.shields.io/github/license/yannmoisan/sbopt)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 # sbopt
