@@ -15,9 +15,9 @@ libraryDependencies += "org.scalameta" %% "munit" % "1.3.6" % Test
 testFrameworks += new TestFramework("munit.Framework")
 
 startYear := Some(2020)
-licenses += ("Apache-2.0", new URL("https://www.apache.org/licenses/LICENSE-2.0.txt"))
+licenses += ("Apache-2.0", url("https://www.apache.org/licenses/LICENSE-2.0.txt"))
 homepage := Some(url("https://github.com/yannmoisan/sbopt"))
-scmInfo := Some(
+scmInfo  := Some(
   ScmInfo(
     url("https://github.com/yannmoisan/sbopt"),
     "git@github.com:yannmoisan/sbopt.git"
@@ -25,7 +25,7 @@ scmInfo := Some(
 )
 
 Test / publishArtifact := false
-pomIncludeRepository := { _ =>
+pomIncludeRepository   := { _ =>
   false
 }
 pomExtra :=
